@@ -1,0 +1,79 @@
+{
+  "id": "db30049c-0619-4ed9-85bc-26e0f2223127",
+  "name": "A Template Name",
+  "brand": "Fanduel",
+  "datasource": "GBS",
+  "aggregators": ["selectionId"],
+  "blocks": [
+    {
+      "type": "TABLE",
+      "name": "Bets Table",
+      "alias": "betsTableInfo",
+      "columns": [
+        {
+          "label": "Bet Id",
+          "expression": "betID",
+          "links": [
+            {
+              "name": "openBetURL",
+              "url": "https://openBet/bets/{{betId}}"
+            }
+          ]
+        },
+        {
+          "label": "Total Stake",
+          "expression": "totalStake"
+        }
+      ]
+    },
+    {
+      "type": "FIELD",
+      "label": "Event ID",
+      "expression": "LATEST(\"selection.eventID\")",
+      "alias": "eventID"
+    },
+    {
+      "type": "FIELD",
+      "label": "Event Name",
+      "expression": "\"selection.eventName\"",
+      "alias": "eventName",
+      "links": [
+        {
+          "name": "Event URL",
+          "url": "https://mpm/eventselections/{{\"selection.eventID\"}}"
+        }
+      ]
+    },
+    {
+      "type": "TABLE",
+      "name": "Customer Table",
+      "alias": "customerTableInfo",
+      "columns": [
+        {
+          "label": "Brand",
+          "expression": "Brand"
+        },
+        {
+          "label": "Customer Id",
+          "expression": "\"customer.customerID\"",
+          "links": [
+            {
+              "name": "IAP",
+              "url": "https://iap/customer/{{\"customer.customerId\"}}"
+            }
+          ]
+        },
+        {
+          "label": "Currency",
+          "expression": "currency"
+        }
+      ]
+    },
+    {
+      "type": "FIELD",
+      "label": "Liability Amount",
+      "expression": "liabilityAmount",
+      "alias": "liabilityAmount"
+    }
+  ]
+}

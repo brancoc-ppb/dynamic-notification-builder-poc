@@ -1,0 +1,67 @@
+{
+  "patternId": "53ed697f-6988-4bf4-826e-05328b5db014",
+  "templateId": "db30049c-0619-4ed9-85bc-26e0f2223011",
+  "patternName": "A Pattern Name",
+  "brand": "Fanduel",
+  "patternAlertText": "A Pattern with a Template with 1 Table",
+  "alertDate": "2026-02-25T12:34:56.000Z",
+  "destinations": ["SLACK"],
+  "slackChannels": ["slack webhook"],
+  "results": [
+    {
+      "alias": "selectionID",
+      "value": "123456789"
+    },
+    {
+      "alias": "selectionName",
+      "value": "a selection name"
+    },
+    {
+      "alias": "selectionName_0_0",
+      "value": "123456789"
+    },
+    {
+      "alias": "eventID",
+      "value": "123"
+    },
+    {
+      "alias": "eventName",
+      "value": "an event name"
+    },
+    {
+      "alias": "eventName_0_0",
+      "value": "123"
+    },
+    {
+      "alias": "marketID",
+      "value": "123456"
+    },
+    {
+      "alias": "marketName",
+      "value": "a market name"
+    },
+    {
+      "alias": "marketName_0_0",
+      "value": "123"
+    },
+    {
+      "alias": "marketName_0_1",
+      "value": "123456"
+    },
+    {
+      "alias": "marketName_1_0",
+      "value": "123"
+    },
+    {
+      "alias": "marketName_1_1",
+      "value": "123456"
+    },
+    {
+      "alias": "betsTableInfo",
+      "value": [
+        "FANDUEL|987654321--987654321|11414194--11414194|1.0|USD",
+        "SB_OPENBET|987654322--987654322|11414197--11414197|2.5|USD"
+      ]
+    }
+  ]
+}

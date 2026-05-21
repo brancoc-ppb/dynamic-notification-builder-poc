@@ -1,0 +1,30 @@
+{
+  "patternId": "53ed697f-6988-4bf4-826e-05328b5db027",
+  "templateId": "db30049c-0619-4ed9-85bc-26e0f2223189",
+  "patternName": "A Pattern Name",
+  "brand": "Fanduel",
+  "patternAlertText": "Template with a table with multiple links",
+  "alertDate": "2026-02-25T12:34:56.000Z",
+  "destinations": ["SLACK"],
+  "slackChannels": ["slack webhook"],
+  "results": [
+    {
+      "alias": "betsTableInfo",
+      "value": [
+        "987654321--987654321--987654321|a selection name--789--123---456---789",
+        "987654322--987654322--987654322|a selection name 2--788--122---455---788"
+      ]
+    },
+    {
+      "alias": "liabilityAmount",
+      "value": "27.02"
+    },
+    {
+      "alias": "customerTableInfo",
+      "value": [
+        "11414194--11414194|USD",
+        "11414197--11414197|USD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "db30049c-0619-4ed9-85bc-26e0f2223011",
+  "name": "A Template Name",
+  "brand": "Fanduel",
+  "datasource": "GBS",
+  "aggregators": ["selectionId"],
+  "blocks": [
+    {
+      "type": "FIELD",
+      "label": "Selection ID",
+      "expression": "\"selection.selectionID\"",
+      "alias": "selectionID"
+    },
+    {
+      "type": "FIELD",
+      "label": "Selection Name",
+      "expression": "\"selection.selectionName\"",
+      "alias": "selectionName",
+      "links": [
+        {
+        "name": "Selection URL",
+        "url": "https://mpm/eventselections/{{\"selection.selectionID\"}}"
+        }
+      ]
+    },
+    {
+      "type": "FIELD",
+      "label": "Event ID",
+      "expression": "LATEST(\"selection.eventID\")",
+      "alias": "eventID"
+    },
+    {
+      "type": "FIELD",
+      "label": "Event Name",
+      "expression": "\"selection.eventName\"",
+      "alias": "eventName",
+      "links": [
+        {
+        "name": "Event URL",
+        "url": "https://mpm/eventselections/{{\"selection.eventID\"}}"
+        }
+      ]
+    },
+    {
+      "type": "FIELD",
+      "label": "Market ID",
+      "expression": "\"selection.marketID\"",
+      "alias": "marketID"
+    },
+    {
+      "type": "FIELD",
+      "label": "Market Name",
+      "expression": "\"selection.marketName\"",
+      "alias": "marketName",
+      "links": [
+        {
+        "name": "Global Fieldbook URL",
+        "url": "https://iap.prf.internal/gfbui#/fieldbook/events/{{LATEST(\"selection.eventID\")}}/markets/{{LATEST(\"selection.marketID\")}}"
+        },
+        {
+        "name": "MPM URL",
+        "url": "https://mpm/events/{{LATEST(\"selection.eventID\")}}/markets/{{LATEST(\"selection.marketID\")}}"
+        }
+      ]
+    },
+    {
+      "type": "TABLE",
+      "name": "Bets Table",
+      "alias": "betsTableInfo",
+      "columns": [
+        {
+          "label": "Brand",
+          "expression": "Brand"
+        },
+        {
+          "label": "Bet Id",
+          "expression": "betID",
+          "links": [
+            {
+              "name": "openBetURL",
+              "url": "https://openBet/bets/{{betId}}"
+            }
+          ]
+        },
+        {
+          "label": "Customer Id",
+          "expression": "\"customer.customerID\"",
+          "links": [
+            {
+              "name": "IAP",
+              "url": "https://iap/customer/{{\"customer.customerId\"}}"
+            }
+          ]
+        },
+        {
+          "label": "Total Stake",
+          "expression": "totalStake"
+        },
+        {
+          "label": "Currency",
+          "expression": "currency"
+        }
+      ]
+    }
+  ],
+  "createdAt": "xy",
+  "createdby": "xy"
+}
